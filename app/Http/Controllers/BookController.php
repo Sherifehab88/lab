@@ -72,7 +72,7 @@ class BookController extends Controller
             }
             $img = $request->file('img');
             $ext = $img ->getClientOriginalExtension();
-            $name = 'book-'. uniqid(). ".$ext";
+            $name = 'book-'. uniqid(). ".$ext"; 
             $img ->move(public_path('uploads/books'),$name);    
         }
 
