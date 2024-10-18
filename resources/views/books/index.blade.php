@@ -4,8 +4,8 @@ All Books
 @endsection
 @section('content') 
 
-<a href="{{ route('books.create') }}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Create</a>
 <h1>All Books</h1>
+<a href="{{ route('books.create') }}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Create</a>
 
 @foreach ($books as $book)
 <hr>

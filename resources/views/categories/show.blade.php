@@ -5,6 +5,16 @@
 <h3>{{$category->name}}</h3>
 
 <hr>
+
+<h3>Books: </h3>
+
+</ul>
+@foreach ($category->books as $book )
+<li>{{$book->title}}</li>
+@endforeach
+<ul>
+
+</ul>
 <a href="{{route("categories.index")}}" class="btn btn-primary" >Back</a> 
 
 @endsection
