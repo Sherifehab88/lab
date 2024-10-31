@@ -8,7 +8,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Users
+
+// Users login
+
+Route::get('/login',[AuthController::class,'login'])->name('auth.login');
+Route::post('/handle-login',[AuthController::class,'handlelogin'])->name('auth.handlelogin');
+
+// Users logout
+
+Route::get('/logout',[AuthController::class,'logout'])->name('auth.logout');
+
+
+// Users register
 
 Route::get('/register',[AuthController::class,'register'])->name('auth.register');
 Route::post('/handle-register',[AuthController::class,'handleregister'])->name('auth.handleregister');
