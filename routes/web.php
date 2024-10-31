@@ -3,10 +3,15 @@
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Users
+
+Route::get('/register',[AuthController::class,'register'])->name('auth.register');
+Route::post('/handle-register',[AuthController::class,'handleregister'])->name('auth.handleregister');
 
 // books read
 
