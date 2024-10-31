@@ -40,14 +40,13 @@ class AuthController extends Controller
     }
     public function handlelogin(request $request)
     {
-        
         $request->validate([
             'email'    => 'required|email|max:100',
             'password' => 'required|string|max:50|min:5'
         ]);
 
         $is_login = Auth::attempt(['email'=>$request->email,'password'=>$request->password]);
-
+// dd($is_login);
         if (! $is_login)
         {
             return back();

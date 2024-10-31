@@ -42,19 +42,28 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form> -->
+      
+      <!-- login and logout -->
 
       <ul class="navbar-nav ml-auto">
+        @guest
         <li class="nav-item">
           <a class="nav-link" href="{{ route('auth.register') }}">Register</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('auth.login') }}">Login</a>
         </li>
+        @endguest
+        @auth
+        <li class="nav-item">
+          <a class="nav-link" href="#">{{Auth::user()->name}}</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('auth.logout') }}">Logout</a>
         </li>
+        @endauth
         
-      </ul>
+      
 
     </div>
   </div>
