@@ -4,6 +4,17 @@ All Books
 @endsection
 @section('content') 
 
+<h3>Add Note</h3>
+<a href="{{ route('notes.create') }}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Create</a>
+
+@auth
+
+    @foreach (Auth::user()->notes as $note )
+        <p>{{ $note->content }}</p> 
+    @endforeach
+
+@endauth
+
 <h1>All Books</h1>
 
 <a href="{{ route('books.create') }}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Create</a>

@@ -5,7 +5,7 @@
 @section('content') 
 
 <h1>All categories</h1>
-<a href="{{ route('categories.create') }}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Create</a>
+<a href="{{ route('categories.create') }}" class="btn btn-success" tabindex="-1" role="button" aria-disabled="true">Add new Note</a>
 
 
 @foreach ($categories as $category)

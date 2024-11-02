@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Middleware\IsLogin;
+use App\Http\Controllers\NoteController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -38,6 +39,9 @@ Route::middleware (['IsLogin'])->group(function(){
 
     Route::get('/logout',[AuthController::class,'logout'])->name('auth.logout');    
 
+    // Note
+    Route::get('/notes/create' ,[NoteController::class,'create'])->name('notes.create');
+    Route::post('/notes/store' ,[NoteController::class,'store'])->name('notes.store');
 });
 
 Route::middleware(['IsGuest'])->group(function(){
