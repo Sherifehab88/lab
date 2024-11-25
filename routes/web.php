@@ -56,6 +56,10 @@ Route::middleware(['IsGuest'])->group(function(){
     Route::get('/register',[AuthController::class,'register'])->name('auth.register');
     Route::post('/handle-register',[AuthController::class,'handleregister'])->name('auth.handleregister');
 
+    // social login
+    Route::get('/login/github',[AuthController::class,'redirectToProvider'])->name('auth.github.redirect');
+    Route::get('/login/github/callback',[AuthController::class,'handleProviderCallback'])->name('auth.github.callback');
+
 });
 
 Route::middleware(['IsLoginAdmin'])->group(function(){

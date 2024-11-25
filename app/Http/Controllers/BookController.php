@@ -95,7 +95,9 @@ class BookController extends Controller
     {
 
         $book = Book::findOrFail($id);
+        
         $img_path = public_path('uploads\books\\'.$book->img);
+        // dd($img_path);
         if($book->img !== null)
         {
             unlink($img_path);

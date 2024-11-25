@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('password',255);
             $table->boolean('is_admin')->default(0);
             $table->string('access_token',64)->nullable();
+            $table->string('oauth_token',255)->nullable();
+
             $table->timestamps();
         });
     }
